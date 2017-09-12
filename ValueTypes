@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+// decimal - тип c наибольшей точностью;
+
+namespace ValueTypes
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //long b = 10;
+            //Console.WriteLine(b.GetType().Name);
+            //Console.ReadKey();
+
+            //decimal d = 1;
+            //d = d / 3;
+            //Console.WriteLine(d);
+            //Console.ReadKey();
+            //int? i = null;
+            //decimal g = 0.1M;
+
+            //int i = 10;
+            //float f = 15;
+            //float x = i * f;
+            //Console.WriteLine(x);
+
+            //Console.WriteLine(Int32.Parse("12"));
+            //Console.WriteLine(nameof(i));
+
+            int x = 0;
+            int y = 0;
+
+            var random = new Random();
+            int boneX = random.Next(0, Console.BufferWidth - 1);
+            int boneY = random.Next(0, Console.BufferHeight);
+
+            var key = Console.ReadKey();
+
+            while (key.Key != ConsoleKey.Escape)
+            {
+                switch (key.Key)
+                {
+                    case ConsoleKey.W:
+                        y = y > 0 ? y - 1 : 0;
+                        break;
+                    case ConsoleKey.S:
+                        y = y < Console.WindowHeight ? y + 1 : Console.WindowHeight;
+                        break;
+                    case ConsoleKey.A:
+                        x = x > 0 ? x - 1 : 0;
+                        break;
+                    case ConsoleKey.D:
+                        x = x < Console.WindowWidth - 1 ? x + 1 : Console.WindowWidth - 1;
+                        break;
+                }
+                Console.Clear();
+                Console.SetCursorPosition(x, y);
+                Console.Write("@");
+
+                Console.SetCursorPosition(boneX, boneY);
+                Console.Write('|');
+
+                key = Console.ReadKey();
+            }
+        }
+    }
+}
