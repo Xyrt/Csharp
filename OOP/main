@@ -1,0 +1,42 @@
+ class Program
+    {
+        static void Main(string[] args)
+        
+        {
+            //var student = new Student("Valerka");
+            //var studen2 = new Student("Ashot", 55);
+            //student.i = 10;
+            //Student.s = "Jorney";
+            //string answer = "";
+            //string name = "Konechno, dobro pojalovat v ad";
+            //student.SayHello();
+            //student.Answer(answer);
+            //student.GetType();
+
+            //string tryAnswer = null;
+
+            //if (student.TryAnswer(ref tryAnswer))
+            //{
+            //    Console.WriteLine(tryAnswer);
+            //}
+
+            //student.SaySomething("Somebody", "please", "give this man", "a gun");
+
+            Console.WriteLine("5й круг. Семилия Гарсия, ваш вечный соперник, которого вы несмогли перегнать ни на 1ой гонке. Теперь пути назад нет. Если и в этот раз, вы отдадите ваше призовое место, Мария уйдет к Бучу, прихватив с собой пол вашего имущества с 2умя детьми. Хотя 1ого она вам оставит. Джоржда в этой семье никто не любит. Итак, пути назад нет.");
+            Console.WriteLine("Ваш ВАЗ - 32 уже дышит сопернику в бампер. Текущая скорость 60км.ч");
+            Console.WriteLine("Ваши действия:");
+            Console.WriteLine("1 - Топить в пол (+10). 2 - Тормознуть (-10)");
+
+            var key = Console.ReadKey();
+
+            var Driver = new Driver("Vasiliy");
+            var Car = new Car("VAZ - 32", Driver);
+
+            if (key.Key == ConsoleKey.NumPad1)
+            {
+                Car.Accelerate();
+               
+            }
+
+        }
+    }
