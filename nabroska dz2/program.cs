@@ -21,11 +21,11 @@ namespace Zadanie_2
                     card.Autorize(pin);
                     autorized = true;
                 }
-                catch (CreditCardException ex)
+                catch (ATMException ex) when (ex.ErrorCode == ErrorCode.CreditCardLocked)
                 {
-                    Console.WriteLine("Allo ti poexavshiy? Y teb9 {0} popitok. Ne ser' miliy", ex.RemainingAttempts);
+                    Console.WriteLine("Allo ti poexavshiy? Y teb9 {0} popitok. Ne ser' miliy");
                 }
-                catch   (CreditCardLockedException)
+                catch   (ATMException ex) when (ex.ErrorCode == ErrorCode.WrongPin)
                 {
                     Console.WriteLine("V chem smisl jizni brat?");
                 }
